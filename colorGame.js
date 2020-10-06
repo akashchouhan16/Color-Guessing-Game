@@ -1,13 +1,13 @@
-var numSquares = 6;
-var colors = [];
-var pickedColor;
+let numSquares = 6;
+let colors = [];
+let pickedColor;
 
-var squares = document.querySelectorAll(".square");
-var colorDisplay = document.getElementById("colorDisplay");
-var messageDisplay = document.querySelector("#message");
-var h1 = document.querySelector("h1");
-var resetButton = document.querySelector("#reset");
-var modeButtons = document.querySelectorAll(".mode");
+let squares = document.querySelectorAll(".square");
+let colorDisplay = document.getElementById("colorDisplay");
+let messageDisplay = document.querySelector("#message");
+let h1 = document.querySelector("h1");
+let resetButton = document.querySelector("#reset");
+let modeButtons = document.querySelectorAll(".mode");
 
 init();
 
@@ -26,14 +26,11 @@ function setupModeButtons() {
       modeButtons[1].classList.remove("selected");
       this.classList.add("selected");
 
-      //terniary shortcut for if/else statement
+      
       this.textContent === "Easy" ? (numSquares = 3) : (numSquares = 6);
 
       reset();
-      //figure out how many squares to show
-      //pick new colors
-      //pick a new pickedColor
-      //update page to reflect changes
+      
     });
   }
 }
@@ -117,6 +114,6 @@ function randomColor() {
   var g = Math.floor(Math.random() * 256);
   var b = Math.floor(Math.random() * 256);
 
-  //the spaces in the string are necessary because CSS returns colors in the format rgb(x, x, x);
+  //the spaces is becuase CSS returns colors in the format rgb(x, x, x);
   return "rgb(" + r + ", " + g + ", " + b + ")";
 }
